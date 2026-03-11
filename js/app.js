@@ -221,6 +221,11 @@ function renderCalendarView() {
 
         const card = document.createElement('div');
         card.className = 'cal-day';
+        
+        let row = Math.floor(i / 7) + 1;
+        let col = (i % 7) + 1;
+        card.style.gridArea = `${row} / ${col} / ${row + 1} / ${col + 1}`;
+        card.style.zIndex = '1';
 
         const ramadhanDay = i + 1;
         const isLast10Days = ramadhanDay >= 21;
@@ -238,8 +243,6 @@ function renderCalendarView() {
 
         if (isLailatulQadar) {
             card.className += ' qadar-night';
-        } else if (isLast10Days) {
-            card.className += ' last-10-days';
         }
 
         let specialLabel = '';
@@ -261,6 +264,28 @@ function renderCalendarView() {
 
         container.appendChild(card);
     }
+
+    // Background blocks for 10 Hari Terakhir (Day 21-30, indices 20-29)
+    let segments = [];
+    let currentSegment = null;
+    for (let i = 20; i < totalDays; i++) {
+        let row = Math.floor(i / 7) + 1;
+        let col = (i % 7) + 1;
+        if (!currentSegment || currentSegment.row !== row) {
+            if (currentSegment) segments.push(currentSegment);
+            currentSegment = { row: row, startCol: col, endCol: col };
+        } else {
+            currentSegment.endCol = col;
+        }
+    }
+    if (currentSegment) segments.push(currentSegment);
+
+    segments.forEach((seg) => {
+        const bg = document.createElement('div');
+        bg.className = 'last-10-days-bg';
+        bg.style.gridArea = `${seg.row} / ${seg.startCol} / ${seg.row + 1} / ${seg.endCol + 1}`;
+        container.appendChild(bg);
+    });
 }
 
 // Format Tanggal (Kunci LocalStorage) e.g., "2024-03-12"

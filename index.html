@@ -122,8 +122,8 @@
             <section class="tracker-calendar mt-main" id="trackerCalendar" style="display: none;">
                 <p class="section-desc text-center mb-3 text-muted" style="margin-bottom: 12px; font-size: 11px;">Kotak
                     <span style="color:var(--emerald-600); font-weight: bold;">hijau</span>: Puasa selesai.
-                    <span style="color:var(--gold); font-weight: bold;">Emas</span>: Potensi Lailatul Qadar.
-                    <span style="color:rgba(14, 165, 233, 0.8); font-weight: bold;">Biru</span>: 10 Hari Terakhir.
+                    <span style="color:var(--gold); font-weight: bold;">Emas</span>: Potensi Lailatul Qadar.<br />
+                    <span style="border-bottom: 1px dashed rgba(14, 165, 233, 0.8); font-weight: bold; padding-bottom: 1px; color: rgba(14, 165, 233, 0.8);">Garis Putus Biru</span>: 10 Hari Terakhir.
                 </p>
                 <div class="calendar-grid" id="calendarGrid">
                     <!-- Grid injected by JS -->
@@ -264,6 +264,29 @@
             </div>
         </main>
 
+        <!-- TAB: About / Info -->
+        <main class="app-tab" id="tab-about">
+            <div class="glass-panel text-center">
+                <h3 class="section-title">Tentang Proyek</h3>
+                <p class="section-desc">Informasi Mutaba'ah Yaumiyah & Source Code</p>
+            </div>
+
+            <div class="glass-panel mt-main">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <i class="fa-brands fa-github" style="font-size: 48px; color: var(--gold); margin-bottom: 12px;"></i>
+                    <h4 style="font-size: 18px; color: var(--emerald-100);">Open Source</h4>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Aplikasi Ramadhan Tracker ini sepenuhnya gratis dan open-source. Dibuat untuk memudahkan umat muslim dalam melacak target ibadah harian (Mutaba'ah Yaumiyah) selama bulan suci Ramadhan.</p>
+                </div>
+
+                <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                    <p style="font-size: 13px; color: var(--text-main); margin-bottom: 12px;">Ingin berkontribusi atau deploy (jalankan) aplikasi ini di server Anda sendiri?</p>
+                    <a href="https://github.com/script000kiddies000/simple-ramadhan-tracker" target="_blank" class="action-btn" style="text-decoration: none; display: inline-flex; width: 100%; box-sizing: border-box;">
+                        <i class="fa-brands fa-github"></i> Kunjungi Repository GitHub
+                    </a>
+                </div>
+            </div>
+        </main>
+
         <!-- Bottom Navigation Menu -->
         <nav class="bottom-nav">
             <button class="nav-item active" data-target="tab-tracker">
@@ -285,6 +308,10 @@
             <button class="nav-item" data-target="tab-zakat">
                 <i class="fa-solid fa-calculator"></i>
                 <span>Zakat</span>
+            </button>
+            <button class="nav-item" data-target="tab-about">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
             </button>
         </nav>
 
