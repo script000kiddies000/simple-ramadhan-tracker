@@ -2,7 +2,7 @@
 
 Aplikasi Web Harian Interaktif untuk menemani dan memantau Ibadah Anda selama Bulan Suci Ramadhan. Dibuat dengan antarmuka yang modern, responsif, dan elegan berlapis estetika _Glassmorphism_.
 
-## ✨ Fitur Unggulan
+## ✨ Fitur Unggulan :
 
 1.  **Tracker Mutaba'ah Harian (Checklist & Kalender)**
     *   Berfungsi memantau target Ibadah Harian: Puasa, Sholat Tarawih, Tilawah, Sedekah, dll.
